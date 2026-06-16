@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Quickest Reminder Ever</string>
+    <string name="launcher_name">Quickest</string>
 </resources>

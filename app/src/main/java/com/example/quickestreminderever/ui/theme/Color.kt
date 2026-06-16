@@ -2,10 +2,12 @@ package com.example.quickestreminderever.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+// HSL(205, 77%, 48%) based colors
+val PrimaryBlue = Color(0xFF1D81C1)
+val PrimaryLightBlue = Color(0xFF64B1DE)
+val DarkBackground = Color(0xFF05131C)
+val DarkSurface = Color(0xFF091F2E)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+// Vibrant accents
+val VibrantBlue = Color(0xFF33AFFF)
+val VibrantCyan = Color(0xFF00E5FF)
