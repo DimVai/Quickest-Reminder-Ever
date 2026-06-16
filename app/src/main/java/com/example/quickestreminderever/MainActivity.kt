@@ -1,6 +1,7 @@
 package com.example.quickestreminderever
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -33,13 +34,19 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.quickestreminderever.ui.theme.QuickestReminderEverTheme
 
 class MainActivity : ComponentActivity() {
+    private lateinit var viewModel: MainViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             QuickestReminderEverTheme {
-                val viewModel: MainViewModel = viewModel()
+                viewModel = viewModel()
                 val context = LocalContext.current
+
+                LaunchedEffect(Unit) {
+                    handleIntent(intent)
+                }
 
                 val launcher = rememberLauncherForActivityResult(
                     ActivityResultContracts.RequestPermission()
@@ -72,6 +79,20 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        handleIntent(intent)
+    }
+
+    private fun handleIntent(intent: Intent?) {
+        intent?.getStringExtra("reminder_text")?.let { text ->
+            if (::viewModel.isInitialized) {
+                viewModel.reminderText = text
+            }
+        }
+    }
 }
 
 @Composable
@@ -84,6 +105,15 @@ fun MainScreen(viewModel: MainViewModel) {
                 selection = TextRange(0, viewModel.reminderText.length)
             )
         )
+    }
+
+    LaunchedEffect(viewModel.reminderText) {
+        if (textFieldValue.text != viewModel.reminderText) {
+            textFieldValue = TextFieldValue(
+                text = viewModel.reminderText,
+                selection = TextRange(0, viewModel.reminderText.length)
+            )
+        }
     }
 
     LaunchedEffect(Unit) {
@@ -134,11 +164,11 @@ fun MainScreen(viewModel: MainViewModel) {
 
             // Grid of buttons
             val durations = listOf(
-                "10 sec" to 10_000L,
-                "1 λεπτό" to 60_000L,
+                "5 λεπτά" to 5 * 60_000L,
                 "15 λεπτά" to 15 * 60_000L,
                 "30 λεπτά" to 30 * 60_000L,
                 "1 ώρα" to 60 * 60_000L,
+                "2 ώρες" to 2 * 60 * 60_000L,
                 "4 ώρες" to 4 * 60 * 60_000L
             )
 
