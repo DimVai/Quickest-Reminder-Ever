@@ -2,6 +2,7 @@
 .gradle/
 build/
 /*/build/
+.kotlin/
 
 # IntelliJ / Android Studio files
 .idea/
@@ -38,3 +39,6 @@ local.properties
 
 # Android Studio Profiler
 *.hprof
+
+# Dim werid files
+Delete build folder.txt
