@@ -130,8 +130,10 @@ fun MainScreen(viewModel: MainViewModel) {
                 .statusBarsPadding()
                 .navigationBarsPadding(),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+            verticalArrangement = Arrangement.Top
         ) {
+            Spacer(modifier = Modifier.weight(0.5f))
+
             Text(
                 text = "Τι να σου θυμίσω;",
                 style = MaterialTheme.typography.headlineMedium,
@@ -205,6 +207,7 @@ fun MainScreen(viewModel: MainViewModel) {
                     }
                 }
             }
+            Spacer(modifier = Modifier.weight(3f))
         }
 
         // Success Overlay
