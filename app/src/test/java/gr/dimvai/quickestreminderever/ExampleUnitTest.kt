@@ -1,4 +1,4 @@
-package com.example.quickestreminderever
+package gr.dimvai.quickestreminderever
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.example.quickestreminderever.ui.theme
+package gr.dimvai.quickestreminderever.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

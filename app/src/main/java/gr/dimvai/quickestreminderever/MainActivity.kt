@@ -1,4 +1,4 @@
-package com.example.quickestreminderever
+package gr.dimvai.quickestreminderever
 
 import android.Manifest
 import android.content.Intent
@@ -33,7 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.quickestreminderever.ui.theme.QuickestReminderEverTheme
+import gr.dimvai.quickestreminderever.ui.theme.QuickestReminderEverTheme
 
 class MainActivity : ComponentActivity() {
     private lateinit var viewModel: MainViewModel

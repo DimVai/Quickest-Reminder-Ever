@@ -1,4 +1,4 @@
-package com.example.quickestreminderever
+package gr.dimvai.quickestreminderever
 
 import android.app.NotificationChannel
 import android.app.NotificationManager

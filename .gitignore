@@ -41,4 +41,4 @@ local.properties
 *.hprof
 
 # Dim werid files
-Delete build folder.txt
+Delete build folder.md
