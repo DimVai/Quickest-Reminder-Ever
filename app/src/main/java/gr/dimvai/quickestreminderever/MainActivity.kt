@@ -3,7 +3,6 @@ package gr.dimvai.quickestreminderever
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -52,7 +51,7 @@ class MainActivity : ComponentActivity() {
 
                 val launcher = rememberLauncherForActivityResult(
                     ActivityResultContracts.RequestPermission()
-                ) { isGranted ->
+                ) { _ ->
                     // Handle permission result if needed
                 }
 
